@@ -50,7 +50,7 @@ namespace Persistance.Repositories
             if (!enableTracking) queryable = queryable.AsNoTracking();
             if (include is not null) queryable = include(queryable);
             
-            queryable.Where(predicate);
+            //queryable.Where(predicate);
 
             return await queryable.FirstOrDefaultAsync(predicate);
         }
@@ -65,7 +65,7 @@ namespace Persistance.Repositories
         public async Task<int> CountAsync(Expression<Func<T, bool>>? predicate = null)
         {
             Table.AsNoTracking();
-            if (predicate is null) Table.Where(predicate);
+            if (predicate is not null) Table.Where(predicate);
             return await Table.CountAsync();
         }
     }
