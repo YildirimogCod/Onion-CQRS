@@ -9,6 +9,10 @@ namespace Persistance.UnitOfWorks
     public class UnitOfWork:IUnitOfWork
     {
         private readonly AppDbContext dbContext;
+        public UnitOfWork(AppDbContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
         public ValueTask DisposeAsync() => dbContext.DisposeAsync();
 
         public IReadRepository<T> GetReadRepository<T>() where T : class, IBaseEntity, new() => new ReadRepository<T>(dbContext);
