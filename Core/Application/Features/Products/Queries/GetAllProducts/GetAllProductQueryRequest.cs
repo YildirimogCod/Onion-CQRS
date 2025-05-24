@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Application.Features.Products.Queries
+namespace Application.Features.Products.Queries.GetAllProducts
 {
     public class GetAllProductQueryRequest:IRequest<IList<GetAllProductQueryResponse>>
     {

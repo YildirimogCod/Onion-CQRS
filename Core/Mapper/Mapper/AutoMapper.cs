@@ -12,22 +12,26 @@ namespace Mapper.Mapper
 
         public TDestination Map<TDestination, TSource>(TSource source, string? ignore = null)
         {
-            throw new NotImplementedException();
+            Config<TDestination, TSource>(5, ignore);
+            return MapperContainer.Map<TDestination>(source);
         }
 
-        public TDestination Map<TDestination, TSource>(IList<TSource> source, string? ignore = null)
+        public IList<TDestination> Map<TDestination, TSource>(IList<TSource> source, string? ignore = null)
         {
-            throw new NotImplementedException();
+           Config<TDestination, TSource>(5, ignore);
+           return MapperContainer.Map<IList<TSource>, IList<TDestination>>(source);
         }
 
         public TDestination Map<TDestination>(object source, string? ignore = null)
         {
-            throw new NotImplementedException();
+           Config<TDestination, object>(5, ignore);
+           return MapperContainer.Map<TDestination>(source);
         }
 
-        public TDestination Map<TDestination>(IList<object> source, string? ignore = null)
+        public IList<TDestination> Map<TDestination>(IList<object> source, string? ignore = null)
         {
-            throw new NotImplementedException();
+            Config<TDestination, object>(5, ignore);
+            return MapperContainer.Map<IList<TDestination>>(source);
         }
 
         public void Config<TDestination, TSource>(int depth = 5, string? ignore = null)
