@@ -1,4 +1,5 @@
-﻿using Application.Features.Products.Queries;
+﻿using Application.Features.Products.Command.CreateProduct;
+using Application.Features.Products.Queries;
 using Application.Features.Products.Queries.GetAllProducts;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -21,6 +22,12 @@ namespace Api.Controllers
         {
             var reponse = await mediator.Send(new GetAllProductQueryRequest());
             return Ok(reponse);
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateProduct(CreateProductRequest request)
+        {
+            await mediator.Send(request);
+            return Ok();
         }
     }
 }

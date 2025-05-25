@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistance.Context;
 
@@ -11,9 +12,11 @@ using Persistance.Context;
 namespace Persistance.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250525113513_update")]
+    partial class update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,23 +52,23 @@ namespace Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 5, 25, 12, 34, 45, 572, DateTimeKind.Utc).AddTicks(1928),
+                            CreatedAt = new DateTime(2025, 5, 25, 11, 35, 13, 47, DateTimeKind.Utc).AddTicks(1405),
                             IsDeleted = false,
-                            Name = "Jewelery, Tools & Clothing"
+                            Name = "Home & Jewelery"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2025, 5, 25, 12, 34, 45, 572, DateTimeKind.Utc).AddTicks(1942),
+                            CreatedAt = new DateTime(2025, 5, 25, 11, 35, 13, 47, DateTimeKind.Utc).AddTicks(1416),
                             IsDeleted = false,
-                            Name = "Health & Health"
+                            Name = "Beauty"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2025, 5, 25, 12, 34, 45, 572, DateTimeKind.Utc).AddTicks(1953),
+                            CreatedAt = new DateTime(2025, 5, 25, 11, 35, 13, 47, DateTimeKind.Utc).AddTicks(1421),
                             IsDeleted = true,
-                            Name = "Sports & Garden"
+                            Name = "Shoes"
                         });
                 });
 
@@ -101,7 +104,7 @@ namespace Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 5, 25, 12, 34, 45, 572, DateTimeKind.Utc).AddTicks(4468),
+                            CreatedAt = new DateTime(2025, 5, 25, 11, 35, 13, 47, DateTimeKind.Utc).AddTicks(3430),
                             IsDeleted = false,
                             Name = "Elektrik",
                             ParentId = 0,
@@ -110,7 +113,7 @@ namespace Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2025, 5, 25, 12, 34, 45, 572, DateTimeKind.Utc).AddTicks(4470),
+                            CreatedAt = new DateTime(2025, 5, 25, 11, 35, 13, 47, DateTimeKind.Utc).AddTicks(3431),
                             IsDeleted = false,
                             Name = "Moda",
                             ParentId = 0,
@@ -119,7 +122,7 @@ namespace Persistance.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2025, 5, 25, 12, 34, 45, 572, DateTimeKind.Utc).AddTicks(4471),
+                            CreatedAt = new DateTime(2025, 5, 25, 11, 35, 13, 47, DateTimeKind.Utc).AddTicks(3433),
                             IsDeleted = false,
                             Name = "Bilgisayar",
                             ParentId = 1,
@@ -128,7 +131,7 @@ namespace Persistance.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2025, 5, 25, 12, 34, 45, 572, DateTimeKind.Utc).AddTicks(4473),
+                            CreatedAt = new DateTime(2025, 5, 25, 11, 35, 13, 47, DateTimeKind.Utc).AddTicks(3434),
                             IsDeleted = false,
                             Name = "Kadın",
                             ParentId = 2,
@@ -172,28 +175,28 @@ namespace Persistance.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2025, 5, 25, 12, 34, 45, 575, DateTimeKind.Utc).AddTicks(338),
-                            Description = "Kapının koşuyorlar explicabo beatae cezbelendi.",
+                            CreatedAt = new DateTime(2025, 5, 25, 11, 35, 13, 49, DateTimeKind.Utc).AddTicks(6739),
+                            Description = "Veniam çarpan dağılımı eve nihil.",
                             IsDeleted = false,
-                            Title = "Quis."
+                            Title = "Sandalye."
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 3,
-                            CreatedAt = new DateTime(2025, 5, 25, 12, 34, 45, 575, DateTimeKind.Utc).AddTicks(372),
-                            Description = "Dergi explicabo non uzattı masaya.",
+                            CreatedAt = new DateTime(2025, 5, 25, 11, 35, 13, 49, DateTimeKind.Utc).AddTicks(6773),
+                            Description = "Dolorem karşıdakine consequuntur modi ötekinden.",
                             IsDeleted = true,
-                            Title = "Ama autem."
+                            Title = "Ullam molestiae."
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2025, 5, 25, 12, 34, 45, 575, DateTimeKind.Utc).AddTicks(403),
-                            Description = "Blanditiis laboriosam sunt velit sit.",
+                            CreatedAt = new DateTime(2025, 5, 25, 11, 35, 13, 49, DateTimeKind.Utc).AddTicks(6800),
+                            Description = "Mıknatıslı aperiam corporis anlamsız tv.",
                             IsDeleted = false,
-                            Title = "Quam."
+                            Title = "Sit."
                         });
                 });
 
@@ -239,23 +242,23 @@ namespace Persistance.Migrations
                         {
                             Id = 1,
                             BrandId = 1,
-                            CreatedAt = new DateTime(2025, 5, 25, 15, 34, 45, 578, DateTimeKind.Local).AddTicks(8263),
-                            Description = "Odit nemo adipisci türemiş ipsa bilgisayarı aspernatur praesentium quam. Bilgiyasayarı gitti et bilgiyasayarı ışık ea nisi.",
-                            Discount = 5.981978531721220m,
+                            CreatedAt = new DateTime(2025, 5, 25, 14, 35, 13, 53, DateTimeKind.Local).AddTicks(2342),
+                            Description = "Voluptatem kutusu explicabo bundan dolorem sinema odio ex eve. Aspernatur çarpan duyulmamış adresini. Balıkhaneye numquam veritatis otobüs velit yapacakmış inventore.",
+                            Discount = 6.799782863042070m,
                             IsDeleted = false,
-                            Price = 367.38m,
-                            Title = "Unbranded Soft Bike"
+                            Price = 901.09m,
+                            Title = "Unbranded Fresh Mouse"
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 3,
-                            CreatedAt = new DateTime(2025, 5, 25, 15, 34, 45, 578, DateTimeKind.Local).AddTicks(8382),
-                            Description = "Sequi voluptatem sequi filmini amet qui et quia beatae hesap. Ullam voluptatem filmini et dolore türemiş.",
-                            Discount = 2.626384923985970m,
+                            CreatedAt = new DateTime(2025, 5, 25, 14, 35, 13, 53, DateTimeKind.Local).AddTicks(2689),
+                            Description = "Telefonu vel masaya. İure koştum layıkıyla labore kapının. Kulu layıkıyla çünkü quia ut ipsam exercitationem consectetur accusantium deleniti. Gazete tempora voluptatem. Çıktılar yaptı lakin totam.",
+                            Discount = 4.242928767833990m,
                             IsDeleted = false,
-                            Price = 182.83m,
-                            Title = "Refined Concrete Cheese"
+                            Price = 954.10m,
+                            Title = "Handcrafted Cotton Chips"
                         });
                 });
 
