@@ -1,21 +1,24 @@
-﻿using Application.Features.Products.Rules;
+﻿using Application.Bases;
+using Application.Features.Products.Rules;
+using Application.Interfaces.AutoMapper;
 using Application.Interfaces.UnitOfWorks;
 using Domain.Entities;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 
 namespace Application.Features.Products.Command.CreateProduct
 {
-    public class CreateProductHandler:IRequestHandler<CreateProductRequest,Unit>
+    public class CreateProductHandler:BaseHandler,IRequestHandler<CreateProductRequest,Unit>
     {
         // Inject any required services, such as a repository or unit of work
-        private readonly IUnitOfWork _unitOfWork;
+      
         private readonly ProductRules _productRules;
-        public CreateProductHandler(IUnitOfWork unitOfWork,ProductRules productRules)
-        {
-            _unitOfWork = unitOfWork;
-            _productRules = productRules;
 
+        public CreateProductHandler(IUnitOfWork unitOfWork, IMapper mapper, IHttpContextAccessor httpContextAccessor, ProductRules productRules) : base(unitOfWork, mapper, httpContextAccessor)
+        {
+            _productRules = productRules;
         }
+
         public async Task<Unit> Handle(CreateProductRequest request, CancellationToken cancellationToken)
         {
             IList<Product> products = await _unitOfWork.GetReadRepository<Product>().GetAllAsync();

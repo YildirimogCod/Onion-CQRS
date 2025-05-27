@@ -1,20 +1,19 @@
-﻿using Application.Interfaces.AutoMapper;
+﻿using Application.Bases;
+using Application.Interfaces.AutoMapper;
 using Application.Interfaces.UnitOfWorks;
 using Domain.Entities;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 
 namespace Application.Features.Products.Command.UpdateProduct
 {
-    public class UpdateProductHandler:IRequestHandler<UpdateProductRequest,Unit>
+    public class UpdateProductHandler:BaseHandler,IRequestHandler<UpdateProductRequest,Unit>
     {
         // Inject any required services here, e.g., a repository or a database context
-        private readonly IUnitOfWork _unitOfWork;
-        private  readonly IMapper _mapper;
-        public UpdateProductHandler(IUnitOfWork unitOfWork,IMapper mapper)
+        public UpdateProductHandler(IUnitOfWork unitOfWork, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, mapper, httpContextAccessor)
         {
-            _unitOfWork = unitOfWork;
-            _mapper = mapper;
         }
+
         public async Task<Unit> Handle(UpdateProductRequest request, CancellationToken cancellationToken)
         {
             var product = await _unitOfWork.GetReadRepository<Product>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);

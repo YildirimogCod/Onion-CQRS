@@ -4,7 +4,7 @@ using SendGrid.Helpers.Errors.Model;
 
 namespace Application.Exceptions
 {
-    public class ExceptionMiddleware: IMiddleware
+    public class ExceptionMiddleware : IMiddleware
     {
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
@@ -43,6 +43,7 @@ namespace Application.Exceptions
                 Errors = errors
             }.ToString());
         }
+
         private static int GetStatusCode(Exception exception)
         {
             return exception switch
@@ -56,4 +57,5 @@ namespace Application.Exceptions
                 _ => StatusCodes.Status500InternalServerError
             };
         }
+    }
 }

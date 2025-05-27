@@ -13,7 +13,7 @@ namespace Persistance.UnitOfWorks
         {
             this.dbContext = dbContext;
         }
-        public ValueTask DisposeAsync() => dbContext.DisposeAsync();
+        public async ValueTask DisposeAsync() => await dbContext.DisposeAsync();
 
         public IReadRepository<T> GetReadRepository<T>() where T : class, IBaseEntity, new() => new ReadRepository<T>(dbContext);
 

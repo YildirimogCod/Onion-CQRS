@@ -1,10 +1,12 @@
 ﻿using System.Reflection;
 using Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistance.Context
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext:IdentityDbContext<User,Role,Guid>
+
     {
         public AppDbContext()
         {
@@ -18,6 +20,7 @@ namespace Persistance.Context
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Detail> Details { get; set; }
+        public DbSet<ProductCategory> ProductCategories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

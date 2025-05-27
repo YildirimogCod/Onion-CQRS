@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistance.Context;
 
@@ -11,9 +12,11 @@ using Persistance.Context;
 namespace Persistance.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250526135829_jwtconfig")]
+    partial class jwtconfig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,23 +52,23 @@ namespace Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 5, 27, 21, 20, 31, 980, DateTimeKind.Utc).AddTicks(8468),
+                            CreatedAt = new DateTime(2025, 5, 26, 13, 58, 28, 333, DateTimeKind.Utc).AddTicks(5096),
                             IsDeleted = false,
-                            Name = "Games"
+                            Name = "Baby, Shoes & Kids"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2025, 5, 27, 21, 20, 31, 980, DateTimeKind.Utc).AddTicks(8479),
+                            CreatedAt = new DateTime(2025, 5, 26, 13, 58, 28, 333, DateTimeKind.Utc).AddTicks(5114),
                             IsDeleted = false,
-                            Name = "Toys"
+                            Name = "Games & Beauty"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2025, 5, 27, 21, 20, 31, 980, DateTimeKind.Utc).AddTicks(8542),
+                            CreatedAt = new DateTime(2025, 5, 26, 13, 58, 28, 333, DateTimeKind.Utc).AddTicks(5122),
                             IsDeleted = true,
-                            Name = "Jewelery, Jewelery & Grocery"
+                            Name = "Clothing"
                         });
                 });
 
@@ -101,7 +104,7 @@ namespace Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 5, 27, 21, 20, 31, 981, DateTimeKind.Utc).AddTicks(1286),
+                            CreatedAt = new DateTime(2025, 5, 26, 13, 58, 28, 333, DateTimeKind.Utc).AddTicks(8329),
                             IsDeleted = false,
                             Name = "Elektrik",
                             ParentId = 0,
@@ -110,7 +113,7 @@ namespace Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2025, 5, 27, 21, 20, 31, 981, DateTimeKind.Utc).AddTicks(1288),
+                            CreatedAt = new DateTime(2025, 5, 26, 13, 58, 28, 333, DateTimeKind.Utc).AddTicks(8332),
                             IsDeleted = false,
                             Name = "Moda",
                             ParentId = 0,
@@ -119,7 +122,7 @@ namespace Persistance.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2025, 5, 27, 21, 20, 31, 981, DateTimeKind.Utc).AddTicks(1290),
+                            CreatedAt = new DateTime(2025, 5, 26, 13, 58, 28, 333, DateTimeKind.Utc).AddTicks(8334),
                             IsDeleted = false,
                             Name = "Bilgisayar",
                             ParentId = 1,
@@ -128,7 +131,7 @@ namespace Persistance.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2025, 5, 27, 21, 20, 31, 981, DateTimeKind.Utc).AddTicks(1292),
+                            CreatedAt = new DateTime(2025, 5, 26, 13, 58, 28, 333, DateTimeKind.Utc).AddTicks(8336),
                             IsDeleted = false,
                             Name = "Kadın",
                             ParentId = 2,
@@ -172,28 +175,28 @@ namespace Persistance.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2025, 5, 27, 21, 20, 31, 984, DateTimeKind.Utc).AddTicks(1625),
-                            Description = "Ea hesap consectetur değirmeni in.",
+                            CreatedAt = new DateTime(2025, 5, 26, 13, 58, 28, 337, DateTimeKind.Utc).AddTicks(3221),
+                            Description = "Ab kalemi layıkıyla eum otobüs.",
                             IsDeleted = false,
-                            Title = "Sed."
+                            Title = "Vel."
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 3,
-                            CreatedAt = new DateTime(2025, 5, 27, 21, 20, 31, 984, DateTimeKind.Utc).AddTicks(1674),
-                            Description = "Layıkıyla quam consequuntur numquam doğru.",
+                            CreatedAt = new DateTime(2025, 5, 26, 13, 58, 28, 337, DateTimeKind.Utc).AddTicks(3271),
+                            Description = "Quia praesentium qui aut çorba.",
                             IsDeleted = true,
-                            Title = "Umut yapacakmış."
+                            Title = "Adipisci sokaklarda."
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2025, 5, 27, 21, 20, 31, 984, DateTimeKind.Utc).AddTicks(1711),
-                            Description = "Doğru karşıdakine sıfat bahar ötekinden.",
+                            CreatedAt = new DateTime(2025, 5, 26, 13, 58, 28, 337, DateTimeKind.Utc).AddTicks(3307),
+                            Description = "Veniam quia gidecekmiş velit biber.",
                             IsDeleted = false,
-                            Title = "Quaerat."
+                            Title = "İusto."
                         });
                 });
 
@@ -239,23 +242,23 @@ namespace Persistance.Migrations
                         {
                             Id = 1,
                             BrandId = 1,
-                            CreatedAt = new DateTime(2025, 5, 28, 0, 20, 31, 997, DateTimeKind.Local).AddTicks(2407),
-                            Description = "Lambadaki bilgisayarı kutusu magni bilgisayarı yaptı deleniti dolore ratione. Tv bundan un. Ullam ipsa nihil türemiş patlıcan. Sequi uzattı quam gülüyorum düşünüyor consequatur labore iusto ab ışık. Quia layıkıyla yaptı adresini doğru ötekinden ducimus mıknatıslı quaerat.",
-                            Discount = 9.549464562709260m,
+                            CreatedAt = new DateTime(2025, 5, 26, 16, 58, 28, 397, DateTimeKind.Local).AddTicks(6411),
+                            Description = "Eve bahar praesentium voluptatem et göze bilgisayarı için aspernatur. Göze ut nemo numquam ipsam ışık quia in odit. Dağılımı ötekinden gazete labore odio. İpsum exercitationem reprehenderit yapacakmış.",
+                            Discount = 3.350143122640010m,
                             IsDeleted = false,
-                            Price = 300.89m,
-                            Title = "Refined Plastic Hat"
+                            Price = 685.65m,
+                            Title = "Awesome Wooden Chicken"
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 3,
-                            CreatedAt = new DateTime(2025, 5, 28, 0, 20, 31, 997, DateTimeKind.Local).AddTicks(2547),
-                            Description = "Doğru quaerat orta salladı teldeki in yaptı nisi. Doğru voluptate ea göze domates kulu türemiş mutlu nesciunt.",
-                            Discount = 5.292712194104180m,
+                            CreatedAt = new DateTime(2025, 5, 26, 16, 58, 28, 397, DateTimeKind.Local).AddTicks(6526),
+                            Description = "Layıkıyla perferendis adanaya kalemi gülüyorum salladı. Dışarı vel olduğu suscipit ab gül ışık.",
+                            Discount = 5.647847865487530m,
                             IsDeleted = false,
-                            Price = 871.99m,
-                            Title = "Rustic Steel Keyboard"
+                            Price = 671.49m,
+                            Title = "Incredible Frozen Chair"
                         });
                 });
 
