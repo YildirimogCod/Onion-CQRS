@@ -1,5 +1,7 @@
 ﻿using System.Text;
+using Application.Interfaces.RedisCache;
 using Application.Interfaces.Tokens;
+using Infrastructure.RedisCache;
 using Infrastructure.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -14,6 +16,8 @@ namespace Infrastructure
         {
             services.Configure<TokenSettings>(configuration.GetSection("JWT"));
             services.AddTransient<ITokenService, TokenService>();
+            services.Configure<RedisCacheSettings>(configuration.GetSection("RedisCacheSettings"));
+            services.AddTransient<IRedisCacheService, RedisCacheService>();
             services.AddAuthentication(opt =>
             {
                 opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -32,6 +36,11 @@ namespace Infrastructure
                     ValidateIssuerSigningKey = true,
                     ClockSkew = TimeSpan.Zero // Disable the default 5 minute clock skew
                 };
+            });
+            services.AddStackExchangeRedisCache(opt =>
+            {
+                opt.Configuration = configuration["RedisCache:ConnectionString"];
+                opt.InstanceName = configuration["RedisCache:InstanceName"];
             });
         }
     }

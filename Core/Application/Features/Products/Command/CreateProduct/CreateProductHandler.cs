@@ -36,8 +36,8 @@ namespace Application.Features.Products.Command.CreateProduct
                         CategoryId = categoryId,
                         ProductId = product.Id
                     });
-                    await _unitOfWork.SaveChangesAsync();
                 }
+                await _unitOfWork.SaveChangesAsync();
             }
             return Unit.Value; // Return Unit.Value to indicate successful completion
         }
